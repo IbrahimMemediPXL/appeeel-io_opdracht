@@ -20,4 +20,8 @@ export class GithubService {
   getRublicRepos(username: string): Observable<any> {
     return this.http.get<any>(this.url + `/users/${username}/repos`);
   }
+
+  getRepoCommits(username: string, repoName: string): Observable<any> {
+    return this.http.get<any>(this.url + `/repos/${username}/${repoName}/commits`)
+  }
 }

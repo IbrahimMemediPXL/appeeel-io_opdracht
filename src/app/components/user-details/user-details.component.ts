@@ -8,7 +8,7 @@ import { GithubProfile } from 'src/app/shared/Models/github-profile';
 @Component({
   selector: 'app-user-details',
   template: `
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center" *ngIf="githubProfile">
       <div>
         <img style="width: 100px;" [src]="githubProfile.avatarUrl" />
       </div>
@@ -73,10 +73,6 @@ export class UserDetailsComponent implements OnInit {
       this.githubService.getRublicRepos(this.searchText).subscribe(
         (value) => {
           this.repos = value;
-          console.log(this.repos)
-        },
-        (error) => {
-          this._snackBar.open('Error occured during retrieving repos', '', { duration: 2000 });
         }
       )
     });

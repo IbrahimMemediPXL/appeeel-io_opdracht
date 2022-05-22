@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { CommitsComponent } from './components/commits/commits.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     NavbarComponent,
     MyfooterComponent,
     SearchProfileComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    CommitsComponent
   ],
   imports: [
     BrowserModule,
