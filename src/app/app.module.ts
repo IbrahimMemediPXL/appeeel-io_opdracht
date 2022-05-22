@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { CommitsComponent } from './components/commits/commits.component';
+import { GithubService } from './shared/github.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,14 @@ import { CommitsComponent } from './components/commits/commits.component';
     HttpClientModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: GithubService
+    },
+    {
+      provide: HttpClient
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
