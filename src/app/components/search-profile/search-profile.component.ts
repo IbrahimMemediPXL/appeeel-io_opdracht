@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GithubService } from 'src/app/shared/github.service';
 import { GithubProfile } from 'src/app/shared/Models/github-profile';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-search-profile',
@@ -38,9 +40,8 @@ import { GithubProfile } from 'src/app/shared/Models/github-profile';
 })
 export class SearchProfileComponent implements OnInit {
   profileForm!: FormGroup;
-  githubProfile!: GithubProfile;
 
-  constructor(private githubService: GithubService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.profileForm = new FormGroup({
@@ -49,13 +50,6 @@ export class SearchProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.githubService.getProfileInfo(this.profileForm.value.searchtext).subscribe(
-      (value) => {
-        this.githubProfile = new GithubProfile(value);
-        console.log(this.githubProfile);
-      },
-      (error) => {
-        console.log('User not found')
-      });
+    this.router.navigate(['profile/' + this.profileForm.value.searchtext]);
   }
 }

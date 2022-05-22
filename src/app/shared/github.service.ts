@@ -16,4 +16,8 @@ export class GithubService {
   getProfileInfo(username: string): Observable<any> {
     return this.http.get<any>(this.url + `/users/${username}`);
   }
+
+  getRublicRepos(username: string): Observable<any> {
+    return this.http.get<any>(this.url + `/users/${username}/repos`);
+  }
 }
