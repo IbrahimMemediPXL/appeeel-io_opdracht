@@ -1,4 +1,15 @@
-# AppeelIoAssessment
+# appeel.io assessment
+
+## ES6+ functies
+Arrow annotatie: 
+* Waarom -> voor kortere annotatie en leesbaarheid.
+* Waarvoor -> om over de arrays te iterereren.
+Template Strings: 
+* Waarom -> om de aanhalingstekens niet te escapen, u hoeft de plus-operator niet te gebruiken.
+* Waarvoor -> om de username/repo te zetten op de url-link.
+Classes: 
+* Waarom -> classes maken je code beknopter en zelfdocumenterend
+* Waarvoor -> om de response object van github-profiel te kunnen omzetten naar een object met properties die wij nodig hebben.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
