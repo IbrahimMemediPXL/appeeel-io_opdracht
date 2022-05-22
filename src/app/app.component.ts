@@ -3,11 +3,17 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <app-navbar></app-navbar>
-  <main><router-outlet></router-outlet></main>
-  <app-myfooter></app-myfooter>
+  <header><app-navbar></app-navbar></header>
+  
+  <main class="mt-2 mb-2">
+    <mat-card style="min-height: 82vh;">
+      <router-outlet></router-outlet>
+    </mat-card>
+  </main>
+
+  <footer class=""><app-myfooter></app-myfooter></footer>
   `
 })
 export class AppComponent {
-  title = 'Appeel.io assessment';
+  title = 'Appeel.io Assessment';
 }
